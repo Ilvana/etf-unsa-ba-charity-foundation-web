@@ -1,4 +1,6 @@
-import {Component} from "@angular/core";
+import {Component, OnInit} from "@angular/core";
+import {Announcement} from "../announcement";
+import {AnnouncementService} from "../announcementService";
 
 @Component({
   selector: 'allPages-component',
@@ -6,5 +8,21 @@ import {Component} from "@angular/core";
   styleUrls: ['../css/app.bootstrap.css', '../css/app.style.css', '../css/app.swipebox.css']
 })
 
-export class AllPagesComponent {
+export class AllPagesComponent implements OnInit {
+  announcements: Announcement[];
+  mode = 'Observable';
+
+  constructor(private announcementService: AnnouncementService) {
+  }
+
+  ngOnInit() {
+    this.getAnnouncements();
+  }
+
+  getAnnouncements() {
+    this.announcementService.getAnnouncements().subscribe(announcements=>this.announcements = announcements, err => {
+      console.log(err);
+    });
+  }
+
 }

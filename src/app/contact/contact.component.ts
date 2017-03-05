@@ -1,24 +1,27 @@
-import {Component, OnInit} from '@angular/core';
-import {User} from "../user";
-import {UserService} from "../userService";
+import {Component} from '@angular/core';
+import {ContactService} from "../contactService";
+import {Contact} from "../contact";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'contact-component',
-  templateUrl:'./contact.component.html',
+  templateUrl: './contact.component.html',
   styleUrls: ['../css/app.bootstrap.css', '../css/app.style.css', '../css/app.swipebox.css']
 })
 
-export class ContactComponent implements OnInit{
-  errorMessage: string;
-  users: User[];
+export class ContactComponent {
+  private model = new Contact('', '');
   mode = 'Observable';
 
-  constructor (private userService: UserService) {}
+  contact: Contact;
 
-  ngOnInit() { this.getUsers(); }
+  constructor(private contactService: ContactService) {
+  }
 
-  getUsers(){
-    this.userService.getUsers().subscribe(users=>this.users=users, error=>this.errorMessage=<any>error);
+  onSubmit() {
+    this.contactService.sendEmail(this.model).subscribe(contact=>this.contact = contact, err => {
+      console.log(err);
+    });
   }
 }
 

@@ -2,7 +2,7 @@
   <div class="container">
     <h3 class="tittle">Blogs</h3>
     <div class="news-article">
-      <div class="col-md-6 article-post">
+      <div *ngFor="let announcement of announcements" class="col-md-6 article-post">
         <a routerLink="single" routerLinkActive="active" ><img src="./app/images/n1.jpg" alt="img07"/></a>
         <div class="col-md-3 post-meta">
           <div class="meta-icon">
@@ -11,7 +11,7 @@
             </div>
           </div>
           <ul class="ad-info">
-            <li>21 Aug'15</li>
+            <li>{{announcement.date}}</li>
             <li> <a href="#">John Doe</a></li>
             <li> <a href="#">24 Comments</a></li>
           </ul>
@@ -19,139 +19,9 @@
         </div>
         <div class="col-md-9 post-details">
           <a routerLink="singlePage" routerLinkActive="active"><h3>To Protect Humanity</h3></a>
-          <p>Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo.</p>
+          <p>{{announcement.text}}</p>
           <div>
             <a class="blog hvr-shutter-out-horizontal"routerLink="singlePage" routerLinkActive="active" role="button">Read More</a>
-          </div>
-        </div>
-        <!--post-details-->
-        <div class="clearfix"> </div>
-      </div>
-      <!--2-->
-      <div class="col-md-6 article-post">
-        <a routerLink="singlePage" routerLinkActive="active" ><img src="./app/images/n2.jpg" alt="img07"/></a>
-        <div class="col-md-3 post-meta">
-          <div class="meta-icon">
-            <div class="pic">
-              <a href="single.html" > <i class="glyphicon glyphicon-picture"></i></a>
-            </div>
-          </div>
-          <ul class="ad-info">
-            <li>21 Aug'15</li>
-            <li> <a href="#">John Doe</a></li>
-            <li> <a href="#">24 Comments</a></li>
-          </ul>
-          <div class="clearfix"> </div>
-        </div>
-        <div class="col-md-9 post-details">
-          <a href="single.html"><h3>To Protect Humanity</h3></a>
-          <p>Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo.</p>
-          <div>
-            <a class="blog hvr-shutter-out-horizontal" href="single.html" role="button">Read More</a>
-          </div>
-        </div>
-        <!--post-details-->
-        <div class="clearfix"> </div>
-      </div>
-      <!--3-->
-      <div class="col-md-6 article-post">
-        <a routerLink="singlePage" routerLinkActive="active" ><img src="./app/images/n3.jpg" alt="img07"/></a>
-        <div class="col-md-3 post-meta">
-          <div class="meta-icon">
-            <div class="pic">
-              <a href="single.html" > <i class="glyphicon glyphicon-picture"></i></a>
-            </div>
-          </div>
-          <ul class="ad-info">
-            <li>21 Aug'15</li>
-            <li> <a href="#">John Doe</a></li>
-            <li> <a href="#">24 Comments</a></li>
-          </ul>
-          <div class="clearfix"> </div>
-        </div>
-        <div class="col-md-9 post-details">
-          <a href="single.html"><h3>To Protect Humanity</h3></a>
-          <p>Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo.</p>
-          <div>
-            <a class="blog hvr-shutter-out-horizontal" href="single.html" role="button">Read More</a>
-          </div>
-        </div>
-        <!--post-details-->
-        <div class="clearfix"> </div>
-      </div>
-      <!--4-->
-      <div class="col-md-6 article-post">
-        <a routerLink="singlePage" routerLinkActive="active"><img src="./app/images/n4.jpg" alt="img07"/></a>
-        <div class="col-md-3 post-meta">
-          <div class="meta-icon">
-            <div class="pic">
-              <a routerLink="singlePage" routerLinkActive="active" > <i class="glyphicon glyphicon-picture"></i></a>
-            </div>
-          </div>
-          <ul class="ad-info">
-            <li>21 Aug'15</li>
-            <li> <a href="#">John Doe</a></li>
-            <li> <a href="#">24 Comments</a></li>
-          </ul>
-          <div class="clearfix"> </div>
-        </div>
-        <div class="col-md-9 post-details">
-          <a routerLink="singlePage" routerLinkActive="active"><h3>To Protect Humanity</h3></a>
-          <p>Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo.</p>
-          <div>
-            <a class="blog hvr-shutter-out-horizontal" routerLink="singlePage" routerLinkActive="active" role="button">Read More</a>
-          </div>
-        </div>
-        <!--post-details-->
-        <div class="clearfix"> </div>
-      </div>
-      <!--5-->
-      <div class="col-md-6 article-post">
-        <a routerLink="singlePage" routerLinkActive="active" ><img src="./app/images/n2.jpg" alt="img07"/></a>
-        <div class="col-md-3 post-meta">
-          <div class="meta-icon">
-            <div class="pic">
-              <a routerLink="singlePage" routerLinkActive="active" > <i class="glyphicon glyphicon-picture"></i></a>
-            </div>
-          </div>
-          <ul class="ad-info">
-            <li>21 Aug'15</li>
-            <li> <a href="#">John Doe</a></li>
-            <li> <a href="#">24 Comments</a></li>
-          </ul>
-          <div class="clearfix"> </div>
-        </div>
-        <div class="col-md-9 post-details">
-          <a href="single.html"><h3>To Protect Humanity</h3></a>
-          <p>Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo.</p>
-          <div>
-            <a class="blog hvr-shutter-out-horizontal" routerLink="singlePage" routerLinkActive="active" role="button">Read More</a>
-          </div>
-        </div>
-        <!--post-details-->
-        <div class="clearfix"> </div>
-      </div>
-      <!--6-->
-      <div class="col-md-6 article-post lost">
-        <a routerLink="singlePage" routerLinkActive="active" ><img src="./app/images/n3.jpg" alt="img07"/></a>
-        <div class="col-md-3 post-meta">
-          <div class="meta-icon">
-            <div class="pic">
-              <a routerLink="singlePage" routerLinkActive="active" > <i class="glyphicon glyphicon-picture"></i></a>
-            </div>
-          </div>
-          <ul class="ad-info">
-            <li>21 Aug'15</li>
-            <li> <a href="#">John Doe</a></li>
-            <li> <a href="#">24 Comments</a></li>
-          </ul>
-          <div class="clearfix"> </div>
-        </div>
-        <div class="col-md-9 post-details">
-          <a routerLink="singlePage" routerLinkActive="active"><h3>To Protect Humanity</h3></a>
-          <p>Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo.</p>
-          <div>
-            <a class="blog hvr-shutter-out-horizontal" routerLink="singlePage" routerLinkActive="active" role="button">Read More</a>
           </div>
         </div>
         <!--post-details-->

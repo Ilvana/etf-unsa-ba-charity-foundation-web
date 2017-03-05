@@ -3,7 +3,7 @@ import {ContactComponent} from "./contact.component";
 import {BrowserModule} from "@angular/platform-browser";
 import {NgModule} from "@angular/core";
 import {FormsModule} from "@angular/forms";
-import {UserService} from "../userService";
+import {ContactService} from "../contactService";
 
 
 @NgModule({
@@ -13,7 +13,7 @@ import {UserService} from "../userService";
   ],
   exports:      [ ContactComponent, HttpModule ],
   providers: [
-    UserService
+    ContactService
   ]
 })
 export class ContactModule { }

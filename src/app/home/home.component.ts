@@ -1,4 +1,6 @@
-import {Component} from "@angular/core";
+import {Component, OnInit} from "@angular/core";
+import {AnnouncementService} from "../announcementService";
+import {Announcement} from "../announcement";
 
 @Component({
   selector: 'home-component',
@@ -6,5 +8,20 @@ import {Component} from "@angular/core";
   styleUrls: ['../css/app.bootstrap.css', '../css/app.style.css', '../css/app.swipebox.css']
 })
 
-export class HomeComponent {
+export class HomeComponent implements OnInit{
+  announcements: Announcement[];
+  mode = 'Observable';
+
+  constructor(private announcementService: AnnouncementService) {
+  }
+
+  ngOnInit() {
+    this.getAnnouncements();
+  }
+
+  getAnnouncements() {
+    this.announcementService.getAnnouncements().subscribe(announcements=>this.announcements = announcements, err => {
+      console.log(err);
+    });
+  }
 }
