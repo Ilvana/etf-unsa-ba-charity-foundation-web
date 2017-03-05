@@ -4,16 +4,14 @@
     <div class="contact-form">
       <div class="col-md-6 contact-grid">
         <form (ngSubmit)="onSubmit()">
-          <div class="form-group">
           <p class="your-para">Your mail:</p>
-          <input [(ngModel)]="model.to" class="form-control"  name="to" type="text" value="" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='';}">
+          <input [(ngModel)]="model.to" name="to" type="text" value="" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='';}">
           <p class="your-para">Your message:</p>
-          <textarea [(ngModel)]="model.message" class="form-control"  name="message" cols="77" rows="6" value=" " onfocus="this.value='';"
+          <textarea [(ngModel)]="model.message"  name="message" cols="77" rows="6" value=" " onfocus="this.value='';"
                     onblur="if (this.value == '') {this.value = '';}"></textarea>
           <div class="send">
             <input type="submit" value="Send">
           </div>
-            </div>
         </form>
       </div>
       <div class="col-md-6 contact-in">
