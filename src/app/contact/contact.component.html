@@ -3,12 +3,28 @@
     <h3 class="tittle">Contact Us</h3>
     <div class="contact-form">
       <div class="col-md-6 contact-grid">
-        <form (ngSubmit)="onSubmit()">
+        <form (ngSubmit)="onSubmit()" >
           <p class="your-para">Your mail:</p>
-          <input [(ngModel)]="model.to" name="to" type="text" value="" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='';}">
+          <input [(ngModel)]="model.to" name="to" #to="ngModel" class="form-control" id="to" type="text" value="" required onfocus="this.value='';" onblur="if (this.value == '') {this.value ='';}">
+
+          <div *ngIf="to.errors && (to.dirty || to.touched)"
+               class="alert alert-danger">
+            <div [hidden]="!to.errors.required">
+              Email is required
+            </div>
+          </div>
+
           <p class="your-para">Your message:</p>
-          <textarea [(ngModel)]="model.message"  name="message" cols="77" rows="6" value=" " onfocus="this.value='';"
+          <textarea [(ngModel)]="model.message"  name="message" #message="ngModel" class="form-control" id ="message" type="text" value="" required onfocus="this.value='';"
                     onblur="if (this.value == '') {this.value = '';}"></textarea>
+
+          <div *ngIf="message.errors && (message.dirty || message.touched)"
+               class="alert alert-danger">
+            <div [hidden]="!message.errors.required">
+              Message is required
+            </div>
+          </div>
+
           <div class="send">
             <input type="submit" value="Send">
           </div>
