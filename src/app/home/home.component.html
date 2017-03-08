@@ -109,11 +109,11 @@
     <h3 class="tittle">Our News</h3>
     <div class="news-article">
       <div *ngFor="let announcement of announcements | slice:0:2" class="col-md-6 article-post">
-        <a routerLink="single" routerLinkActive="active" ><img src="./app/images/n1.jpg" alt="img07"/></a>
+        <a href="/singlePage"><img src="./app/images/n1.jpg" alt="img07"/></a>
         <div class="col-md-3 post-meta">
           <div class="meta-icon">
             <div class="pic">
-              <a routerLink="singlePage" routerLinkActive="active" > <i class="glyphicon glyphicon-picture"></i></a>
+              <a href="/singlePage"> <i class="glyphicon glyphicon-picture"></i></a>
             </div>
           </div>
           <ul class="ad-info">
@@ -124,10 +124,10 @@
           <div class="clearfix"> </div>
         </div>
         <div class="col-md-9 post-details">
-          <a routerLink="singlePage" routerLinkActive="active"><h3>To Protect Humanity</h3></a>
+          <a href="/singlePage"><h3>To Protect Humanity</h3></a>
           <p>{{announcement.text}}</p>
           <div>
-            <a class="blog hvr-shutter-out-horizontal"routerLink="singlePage" routerLinkActive="active" role="button">Read More</a>
+            <a class="blog hvr-shutter-out-horizontal"href="/singlePage" role="button">Read More</a>
           </div>
         </div>
         <!--post-details-->
