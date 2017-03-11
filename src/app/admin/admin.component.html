@@ -1,0 +1,101 @@
+<div class="grid_3 grid_5">
+  <div class="bs-example" role="tabpanel" data-example-id="togglable-tabs">
+    <tabs id="myTab">
+      <tab tabTitle="Users" data-toggle="tab">
+        <div class="bs-docs-example">
+          <table class="table table-hover">
+            <thead>
+            <tr>
+              <th>Id</th>
+              <th>Username</th>
+              <th>Password</th>
+              <th>Role</th>
+              <th>Enabled</th>
+              <th>Telephone</th>
+              <th>Email</th>
+              <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let user of users">
+              <td>{{user.id}}</td>
+              <td>{{user.username}}</td>
+              <td>{{user.password}}</td>
+              <td>{{user.role}}</td>
+              <td>{{user.enabled}}</td>
+              <td>{{user.telephone}}</td>
+              <td>{{user.email}}</td>
+              <td>
+                <button class="btn btn-danger" (click)="removeUser(user.id)"><span class="glyphicon glyphicon-remove"></span></button>
+                <button class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span></button>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </tab>
+
+      <tab tabTitle="Annoucements" data-toggle="tab">
+        <div class="bs-docs-example">
+          <table class="table table-hover">
+            <thead>
+            <tr>
+              <th>Id</th>
+              <th>Text</th>
+              <th>Date</th>
+              <th>Telephone</th>
+              <th>Account</th>
+              <th>Picture</th>
+              <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let announcement of announcements">
+              <td>{{announcement.id}}</td>
+              <td>{{announcement.text}}</td>
+              <td>{{announcement.date}}</td>
+              <td>{{announcement.telephone}}</td>
+              <td>{{announcement.account}}</td>
+              <td>{{announcement.picture}}</td>
+              <td>
+                <button class="btn btn-danger" (click)="removeAnnouncement(announcement.id)"><span class="glyphicon glyphicon-remove"></span></button>
+                <button class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span></button>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </tab>
+
+      <tab tabTitle="Comments" data-toggle="tab">
+        <div class="bs-docs-example">
+          <table class="table table-hover">
+            <thead>
+            <tr>
+              <th>Id</th>
+              <th>Text</th>
+              <th>Date</th>
+              <th>User</th>
+              <th>Announcement</th>
+              <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let comment of comments">
+              <td>{{comment.id}}</td>
+              <td>{{comment.text}}</td>
+              <td>{{comment.date}}</td>
+              <td>{{comment.user}}</td>
+              <td>{{comment.announcement}}</td>
+              <td>
+                <button class="btn btn-danger" (click)="removeComment(comment.id)"><span class="glyphicon glyphicon-remove"></span></button>
+                <button class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span></button>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </tab>
+    </tabs>
+  </div>
+</div>

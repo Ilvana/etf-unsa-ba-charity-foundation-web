@@ -1,0 +1,7 @@
+<ul id="myTab" class="nav nav-tabs" role="tablist">
+  <li *ngFor="let tab of tabs" (click)="selectTab(tab)"  tabTitle="Foo" role="presentation" role="tab" data-toggle="tab">
+    {{tab.tabTitle}}
+  </li>
+</ul>
+<ng-content></ng-content>
+

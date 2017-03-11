@@ -19,6 +19,10 @@ import {SinglePageModule} from "./singlePage/singlePage.module";
 import {SinglePageComponent} from "./singlePage/singlePage.component";
 import {AllPagesComponent} from "./allPages/allPages.component";
 import {AllPagesModule} from "./allPages/allPages.module";
+import {RegistrationComponent} from "./registration/registration.component";
+import {RegistrationModule} from "./registration/registration.module";
+import {AdminModule} from "./admin/admin.module";
+import {AdminComponent} from "./admin/admin.component";
 
 const appRoutes: Routes = [
   {
@@ -42,12 +46,20 @@ const appRoutes: Routes = [
     component: HomeComponent
   },
   {
-    path:'singlePage',
+    path: 'singlePage',
     component: SinglePageComponent
   },
   {
-    path:'allPages',
+    path: 'allPages',
     component: AllPagesComponent
+  },
+  {
+    path: 'registration',
+    component: RegistrationComponent
+  },
+  {
+    path: 'admin',
+    component: AdminComponent
   },
   {
     path: '',
@@ -71,6 +83,8 @@ const appRoutes: Routes = [
     HomeModule,
     SinglePageModule,
     AllPagesModule,
+    RegistrationModule,
+    AdminModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],

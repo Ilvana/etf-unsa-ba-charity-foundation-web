@@ -1,34 +1,38 @@
-import { Injectable }              from '@angular/core';
-import { Http, Response }          from '@angular/http';
-import { Observable } from 'rxjs/Observable';
+import {Injectable}              from '@angular/core';
+import {Http, Response, Headers, RequestOptions}          from '@angular/http';
+import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 import {User} from "./user";
+import {userInfo} from "os";
+import {error} from "util";
 
 @Injectable()
-export class UserService{
-  private userUrl='/api/user';
+export class UserService {
+  private userUrl = '/api/user';
 
-  constructor (private http: Http) {}
-  getUsers (): Observable<User[]> {
+  constructor(private http: Http) {
+  }
+
+  getUsers(): Observable<User[]> {
     return this.http.get(this.userUrl)
-      .map(this.extractData)
-      .catch(this.handleError);
+      .map((res:Response)=>res.json())
+      .catch((error: any)=>Observable.throw(error.json().error || 'Server error'));
   }
-  private extractData(res: Response) {
-    let body = res.json();
-    return body.data || { };
+
+  addUser(body: Object): Observable<User> {
+    let bodyString = JSON.stringify(body);
+    let headers = new Headers({'Content-Type': 'application/json'});
+    let options = new RequestOptions({headers: headers});
+
+    return this.http.post(this.userUrl, bodyString, options)
+      .map((res: Response)=>res.json)
+      .catch((error: any)=>Observable.throw(error.json().error || 'Server error'));
   }
-  private handleError (error: Response | any) {
-    let errMsg: string;
-    if (error instanceof Response) {
-      const body = error.json() || '';
-      const err = body.error || JSON.stringify(body);
-      errMsg = `${error.status} - ${error.statusText || ''} ${err}`;
-    } else {
-      errMsg = error.message ? error.message : error.toString();
-    }
-    console.error(errMsg);
-    return Observable.throw(errMsg);
+
+  removeUser(id: String) :Observable<User> {
+    return this.http.delete(`${this.userUrl}/${id}`)
+      .map((res: Response)=>res.json())
+      .catch(error=>Observable.throw(error.json().error || 'Server error'));
   }
 }

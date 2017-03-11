@@ -137,7 +137,7 @@ a.donate i {
 	transform: scale(1) translateX(0px) translateY(0px) rotate(0deg);
 	opacity: 1;
 }
-nav a {
+nav {
 	position: relative;
 	display: inline-block;
 	outline: none;
@@ -149,8 +149,8 @@ nav a {
 	text-shadow: 0 0 1px rgba(255,255,255,0.3);
 	font-size: 1em;
 }
-nav a:hover,
-nav a:focus {
+nav :hover,
+nav :focus {
 	outline: none;
 }
 .top-menu ul li a{
@@ -1183,12 +1183,18 @@ h3.tittle.two {
   margin-bottom: 0.2em;
 }
 /*--typography--*/
-.bs-example h2 {
-  margin-bottom: 0;
+.bs-example {
+  margin-bottom: 2cm;
+  margin-left: 2cm;
+  margin-right: 2cm;
+  margin-top: 1cm;
   text-align: left;
 }
-.bs-example h2 {
-  margin-bottom: 0;
+.bs-example {
+  margin-bottom: 2cm;
+  margin-left: 2cm;
+  margin-right: 2cm;
+  margin-top: 1cm;
   text-align: left;
 }
 .table h2 {
@@ -1226,7 +1232,7 @@ h3.tittle.two {
 a#profile-tab {
   color: #000;
 }
-ul#myTab li a {
+ul#myTab li {
   padding: 1em 1em;
   color: #666;
 }

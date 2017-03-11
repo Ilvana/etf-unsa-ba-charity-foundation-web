@@ -3456,29 +3456,29 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   position: relative;
   display: block;
 }
-.nav > li > a {
+.nav > li {
   position: relative;
   display: block;
   padding: 10px 15px;
 }
-.nav > li > a:hover,
-.nav > li > a:focus {
+.nav > li :hover,
+.nav > li :focus {
   text-decoration: none;
   background-color: none;
 }
-.nav > li.disabled > a {
+.nav > li.disabled  {
   color: #999;
 }
-.nav > li.disabled > a:hover,
-.nav > li.disabled > a:focus {
+.nav > li.disabled:hover,
+.nav > li.disabled:focus {
   color: #999;
   text-decoration: none;
   cursor: not-allowed;
   background-color: transparent;
 }
-.nav .open > a,
-.nav .open > a:hover,
-.nav .open > a:focus {
+.nav .open ,
+.nav .open:hover,
+.nav .open:focus {
   background-color: none;
   border-color: #1B242F;
 }
@@ -3488,7 +3488,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   overflow: hidden;
   background-color: #e5e5e5;
 }
-.nav > li > a > img {
+.nav > li  > img {
   max-width: none;
 }
 .nav-tabs {
@@ -3498,18 +3498,18 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   float: left;
   margin-bottom: -1px;
 }
-.nav-tabs > li > a {
+.nav-tabs > li  {
   margin-right: 2px;
   line-height: 1.42857143;
   border: 1px solid transparent;
   border-radius: 4px 4px 0 0;
 }
-.nav-tabs > li > a:hover {
+.nav-tabs > li :hover {
   border-color: none none #ddd;
 }
-.nav-tabs > li.active > a,
-.nav-tabs > li.active > a:hover,
-.nav-tabs > li.active > a:focus {
+.nav-tabs > li.active ,
+.nav-tabs > li.active:hover,
+.nav-tabs > li.active:focus {
   color: #555;
   cursor: default;
   background-color: #fff;
@@ -3523,7 +3523,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav-tabs.nav-justified > li {
   float: none;
 }
-.nav-tabs.nav-justified > li > a {
+.nav-tabs.nav-justified > li {
   margin-bottom: 5px;
   text-align: center;
 }
@@ -3536,27 +3536,27 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     display: table-cell;
     width: 1%;
   }
-  .nav-tabs.nav-justified > li > a {
+  .nav-tabs.nav-justified > li  {
     margin-bottom: 0;
   }
 }
-.nav-tabs.nav-justified > li > a {
+.nav-tabs.nav-justified > li{
   margin-right: 0;
   border-radius: 4px;
 }
-.nav-tabs.nav-justified > .active > a,
-.nav-tabs.nav-justified > .active > a:hover,
-.nav-tabs.nav-justified > .active > a:focus {
+.nav-tabs.nav-justified > .active ,
+.nav-tabs.nav-justified > .active ,
+.nav-tabs.nav-justified > .active {
   border: 1px solid #ddd;
 }
 @media (min-width: 768px) {
-  .nav-tabs.nav-justified > li > a {
+  .nav-tabs.nav-justified > li  {
     border-bottom: 1px solid #ddd;
     border-radius: 4px 4px 0 0;
   }
-  .nav-tabs.nav-justified > .active > a,
-  .nav-tabs.nav-justified > .active > a:hover,
-  .nav-tabs.nav-justified > .active > a:focus {
+  .nav-tabs.nav-justified > .active ,
+  .nav-tabs.nav-justified > .active :hover,
+  .nav-tabs.nav-justified > .active :focus {
     border-bottom-color: #fff;
   }
 }
@@ -3608,23 +3608,23 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav-tabs-justified {
   border-bottom: 0;
 }
-.nav-tabs-justified > li > a {
+.nav-tabs-justified > li {
   margin-right: 0;
   border-radius: 4px;
 }
-.nav-tabs-justified > .active > a,
-.nav-tabs-justified > .active > a:hover,
-.nav-tabs-justified > .active > a:focus {
+.nav-tabs-justified > .active,
+.nav-tabs-justified > .active:hover,
+.nav-tabs-justified > .active:focus {
   border: 1px solid #ddd;
 }
 @media (min-width: 768px) {
-  .nav-tabs-justified > li > a {
+  .nav-tabs-justified > li  {
     border-bottom: 1px solid #ddd;
     border-radius: 4px 4px 0 0;
   }
-  .nav-tabs-justified > .active > a,
-  .nav-tabs-justified > .active > a:hover,
-  .nav-tabs-justified > .active > a:focus {
+  .nav-tabs-justified > .active ,
+  .nav-tabs-justified > .active:hover,
+  .nav-tabs-justified > .activea:focus {
     border-bottom-color: #fff;
   }
 }
