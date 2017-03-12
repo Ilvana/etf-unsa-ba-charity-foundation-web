@@ -14,12 +14,6 @@ export class UserService {
   constructor(private http: Http) {
   }
 
-  getUsers(): Observable<User[]> {
-    return this.http.get(this.userUrl)
-      .map((res:Response)=>res.json())
-      .catch((error: any)=>Observable.throw(error.json().error || 'Server error'));
-  }
-
   addUser(body: Object): Observable<User> {
     let bodyString = JSON.stringify(body);
     let headers = new Headers({'Content-Type': 'application/json'});
@@ -30,7 +24,13 @@ export class UserService {
       .catch((error: any)=>Observable.throw(error.json().error || 'Server error'));
   }
 
-  removeUser(id: String) :Observable<User> {
+  getUsers(): Observable<User[]> {
+    return this.http.get(this.userUrl)
+      .map((res: Response)=>res.json())
+      .catch((error: any)=>Observable.throw(error.json().error || 'Server error'));
+  }
+
+  removeUser(id: String): Observable<User> {
     return this.http.delete(`${this.userUrl}/${id}`)
       .map((res: Response)=>res.json())
       .catch(error=>Observable.throw(error.json().error || 'Server error'));

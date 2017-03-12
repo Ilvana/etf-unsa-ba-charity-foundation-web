@@ -13,6 +13,8 @@ import {CommentService} from "../commentService";
 })
 
 export class AdminComponent implements OnInit {
+  private model = new User(1, '', '', '', 1, '', '');
+  private modelAnnoucement = new Announcement(1, '', '', '', 1, '');
   users: User[];
   announcements: Announcement[];
   comments: Comment[];
@@ -61,6 +63,18 @@ export class AdminComponent implements OnInit {
 
   removeComment(id: String) {
     this.commentService.removeComment(id).subscribe(comment=>this.comment = comment, err=> {
+      console.log(err)
+    })
+  }
+
+  addUser() {
+    this.userService.addUser(this.model).subscribe(user=>this.user = user, err=> {
+      console.log(err);
+    });
+  }
+
+  addAnnouncement() {
+    this.announcementService.addAnnouncement(this.modelAnnoucement).subscribe(announcement=>this.announcement = announcement, err=> {
       console.log(err)
     })
   }

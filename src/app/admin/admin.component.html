@@ -26,12 +26,67 @@
               <td>{{user.telephone}}</td>
               <td>{{user.email}}</td>
               <td>
-                <button class="btn btn-danger" (click)="removeUser(user.id)"><span class="glyphicon glyphicon-remove"></span></button>
+                <button class="btn btn-danger" (click)="removeUser(user.id)"><span
+                  class="glyphicon glyphicon-remove"></span></button>
                 <button class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span></button>
               </td>
             </tr>
             </tbody>
           </table>
+
+          <div>
+            <button type="button" class="btn btn-info" style="float: right;" data-toggle="modal" data-target="#myModal">
+              Add new user
+            </button>
+          </div>
+
+          <!-- Modal -->
+          <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Add user</h4>
+                </div>
+                <div class="modal-body">
+                  <form (ngSubmit)="addUser()">
+                    <h6 class="modal-subtitle">Personal Information</h6>
+                    <p></p>
+                    <p class="your-para">Your username:</p>
+                    <input type="text" class="form-control" id="username" [(ngModel)]="model.username" name="username"
+                           placeholder="Username">
+                    <p></p>
+                    <div class="clearfix"></div>
+                    <p class="your-para">Your password:</p>
+                    <input type="text" class="form-control" id="password" [(ngModel)]="model.password" name="username"
+                           placeholder="Password">
+                    <div class="clearfix"></div>
+                    <p class="your-para">Your mail:</p>
+                    <input type="text" class="form-control" id="email" [(ngModel)]="model.email" name="email"
+                           placeholder="Email">
+                    <div class="clearfix"></div>
+                    <p class="your-para">Your telephone:</p>
+                    <input type="text" class="form-control" id="telephone" [(ngModel)]="model.telephone"
+                           name="telephone" placeholder="Phone">
+                    <div class="clearfix"></div>
+                    <p class="your-para">Your address:</p>
+                    <textarea id="message" class="form-control" [(ngModel)]="model.address" name="address"
+                              placeholder="Address"></textarea>
+                    <div class="clearfix"></div>
+                    <div class="donate">
+                      <input type="submit" style="float: right" value="Add user">
+                    </div>
+                  </form>
+                </div>
+                <div class="clearfix"></div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </tab>
 
@@ -58,12 +113,62 @@
               <td>{{announcement.account}}</td>
               <td>{{announcement.picture}}</td>
               <td>
-                <button class="btn btn-danger" (click)="removeAnnouncement(announcement.id)"><span class="glyphicon glyphicon-remove"></span></button>
+                <button class="btn btn-danger" (click)="removeAnnouncement(announcement.id)"><span
+                  class="glyphicon glyphicon-remove"></span></button>
                 <button class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span></button>
               </td>
             </tr>
             </tbody>
           </table>
+          <div>
+            <button type="button" class="btn btn-info" style="float: right;" data-toggle="modal" data-target="#announcementModal">
+              Add new announcement
+            </button>
+          </div>
+          <!-- Modal -->
+          <div id="announcementModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Add announcement</h4>
+                </div>
+                <div class="modal-body">
+                  <form (ngSubmit)="addAnnouncement()">
+                    <h6 class="modal-subtitle">Personal Information</h6>
+                    <p></p>
+                    <p class="your-para">Text:</p>
+                    <input type="text" class="form-control" id="text" [(ngModel)]="modelAnnoucement.text" name="text"
+                           placeholder="Text">
+                    <p></p>
+                    <div class="clearfix"></div>
+                    <p class="your-para">Date:</p>
+                    <input type="text" class="form-control" id="date" [(ngModel)]="modelAnnoucement.date" name="date"
+                           placeholder="Date">
+                    <div class="clearfix"></div>
+                    <p class="your-para">Telephone:</p>
+                    <input type="text" class="form-control" id="telephone" [(ngModel)]="modelAnnoucement.telephone"
+                           name="telephone" placeholder="Phone">
+                    <div class="clearfix"></div>
+                    <p class="your-para">Account:</p>
+                    <input type="text" class="form-control" id="account" [(ngModel)]="modelAnnoucement.account"
+                           name="account" placeholder="Account">
+                    <div class="clearfix"></div>
+                    <div class="donate">
+                      <input type="submit" style="float: right" value="Add announcement">
+                    </div>
+                  </form>
+                </div>
+                <div class="clearfix"></div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </tab>
 
@@ -88,7 +193,8 @@
               <td>{{comment.user}}</td>
               <td>{{comment.announcement}}</td>
               <td>
-                <button class="btn btn-danger" (click)="removeComment(comment.id)"><span class="glyphicon glyphicon-remove"></span></button>
+                <button class="btn btn-danger" (click)="removeComment(comment.id)"><span
+                  class="glyphicon glyphicon-remove"></span></button>
                 <button class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span></button>
               </td>
             </tr>
