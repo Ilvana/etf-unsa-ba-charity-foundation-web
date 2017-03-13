@@ -2,7 +2,7 @@ import {NgModule} from "@angular/core";
 import {BrowserModule} from "@angular/platform-browser";
 import {HttpModule} from "@angular/http";
 import {SinglePageComponent} from "./singlePage.component";
-import {CommentService} from "../commentService";
+import {CommentService} from "../services/commentService";
 import {FormsModule} from "@angular/forms";
 
 @NgModule({

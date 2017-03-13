@@ -1,9 +1,9 @@
 import {Component, OnInit} from "@angular/core";
-import {User} from "../user";
-import {UserService} from "../userService";
-import {AnnouncementService} from "../announcementService";
+import {User} from "../models/user";
+import {UserService} from "../services/userService";
+import {AnnouncementService} from "../services/announcementService";
 import {Announcement} from "../announcement";
-import {CommentService} from "../commentService";
+import {CommentService} from "../services/commentService";
 
 
 @Component({

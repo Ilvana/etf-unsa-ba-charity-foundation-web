@@ -3,9 +3,9 @@ import {Http, Response, Headers, RequestOptions}          from '@angular/http';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
-import {User} from "./user";
+import {User} from "../models/user";
 import {userInfo} from "os";
-import {error} from "util";
+import {error} from ".";
 
 @Injectable()
 export class UserService {

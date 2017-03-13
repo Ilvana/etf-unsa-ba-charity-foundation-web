@@ -1,5 +1,5 @@
 import {Component} from "@angular/core";
-import {CommentService} from "../commentService";
+import {CommentService} from "../services/commentService";
 
 @Component({
   selector: 'singlePage-component',

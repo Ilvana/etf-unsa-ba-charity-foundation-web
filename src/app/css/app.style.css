@@ -66,18 +66,18 @@ ul.f-icons li {
   display: inline;
 }
 ul.f-icons li a.facebook,.ul.f-iconsli a.p,ul.f-icons li a.twitter{
-	background: url(./app/images/icons.png) no-repeat -4px 0px;
+	background: url(./assets/images/icons.png) no-repeat -4px 0px;
 	height:40px;
 	width:40px;
 }
 ul.f-icons li a.gg{
-	background: url(./app/images/icons.png) no-repeat -44px 0px;
+	background: url(./assets/images/icons.png) no-repeat -44px 0px;
 }
 ul.f-icons li a.twitter{
-	background: url(./app/images/icons.png) no-repeat -84px 0px;
+	background: url(./assets/images/icons.png) no-repeat -84px 0px;
 }
 ul.f-icons  li a.p{
-	background: url(./app/images/icons.png) no-repeat -124px 0px;
+	background: url(./assets/images/icons.png) no-repeat -124px 0px;
 }
 .do-button a{
   padding: 0.8em 1.2em;
@@ -181,7 +181,7 @@ nav :focus {
 	  display: block;
 	   width: 35px;
 	  height: 35px;
-	  background: url(../images/nav.png) no-repeat 0px 0px;
+	  background: url(../../assets/images/nav.png) no-repeat 0px 0px;
 	  display: block;
 	  position: absolute;
 	    right: 127px;
@@ -216,7 +216,7 @@ nav :focus {
   position: relative;
 }
 .banner{
-background: url(../images/banner.jpg) no-repeat center top;
+background: url(../../assets/images/banner.jpg) no-repeat center top;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -294,7 +294,7 @@ background: url(../images/banner.jpg) no-repeat center top;
   text-decoration: none;
   height: 80px;
   width: 40px;
-  background: transparent url("../images/arrows.png") no-repeat left top;
+  background: transparent url("../../assets/images/arrows.png") no-repeat left top;
   margin-top: 4%;
   display: block;
 }
@@ -821,19 +821,19 @@ ul.ad-info li  a{
 i.admin {
   width: 20px;
   height: 20px;
-  background: url(../images/img-sprite.png) no-repeat 5px 1px;
+  background: url(../../assets/images/img-sprite.png) no-repeat 5px 1px;
   float: left;
 }
 i.date {
 	width: 20px;
 	height: 20px;
-	background: url(../images/img-sprite.png) no-repeat -23px 2px;
+	background: url(../../assets/images/img-sprite.png) no-repeat -23px 2px;
 	float: left;
 }
 i.comment {
 	width: 20px;
 	height: 20px;
-	background: url(../images/img-sprite.png) no-repeat -59px 2px;
+	background: url(../../assets/images/img-sprite.png) no-repeat -59px 2px;
 	float: left;
 }
 .leave h4,h4.tz-title-4.tzcolor-blue {
@@ -1040,7 +1040,7 @@ h5.m_26 a:hover{
 	color:#c3a000;
 }
 .md-col-in ul li i{
-	background: url(../images/img-sprite.png)no-repeat -497px -20px;
+	background: url(../../assets/images/img-sprite.png)no-repeat -497px -20px;
 	width: 8px;
 	height: 8px;
 	display: inline-block;
@@ -1096,7 +1096,7 @@ h3.tittle.two {
 }
 /*--about-section--*/
 .banner.two {
-  background: url(./app/images/banner-two.jpg) no-repeat center top;
+  background: url(./assets/images/banner-two.jpg) no-repeat center top;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -1509,7 +1509,7 @@ color: #53d0c6;
 	  padding: 2em;
     }
 	.banner {
-	  background: url(../images/banner.jpg) no-repeat center top;
+	  background: url(../../assets/images/banner.jpg) no-repeat center top;
 	  background-size: cover;
 	  -webkit-background-size: cover;
 	  -moz-background-size: cover;
@@ -1521,7 +1521,7 @@ color: #53d0c6;
 	  font-size: 3.1em
 	}
 	.banner.two {
-	  background: url(./app/images/banner-two.jpg) no-repeat center top;
+	  background: url(./assets/images/banner-two.jpg) no-repeat center top;
 	  background-size: cover;
 	  -webkit-background-size: cover;
 	  -moz-background-size: cover;
@@ -1540,7 +1540,7 @@ color: #53d0c6;
 	  padding: 2em;
 	}
 	.banner {
-	  background: url(../images/banner.jpg) no-repeat center top;
+	  background: url(../../assets/images/banner.jpg) no-repeat center top;
 	  background-size: cover;
 	  -webkit-background-size: cover;
 	  -moz-background-size: cover;
@@ -1597,7 +1597,7 @@ color: #53d0c6;
 	  padding: 1em;
 	}
 	.banner {
-	  background: url(../images/banner.jpg) no-repeat center top;
+	  background: url(../../assets/images/banner.jpg) no-repeat center top;
 	  background-size: cover;
 	  -webkit-background-size: cover;
 	  -moz-background-size: cover;
@@ -1678,7 +1678,7 @@ color: #53d0c6;
 	  padding-bottom: 2em;
 	}
 	.banner.two {
-	  background: url(./app/images/banner-two.jpg) no-repeat center top;
+	  background: url(./assets/images/banner-two.jpg) no-repeat center top;
 	  background-size: cover;
 	  -webkit-background-size: cover;
 	  -moz-background-size: cover;
@@ -1714,7 +1714,7 @@ color: #53d0c6;
 }
 @media (max-width:768px){
 	.banner {
-	  background: url(../images/banner.jpg) no-repeat center top;
+	  background: url(../../assets/images/banner.jpg) no-repeat center top;
 	  background-size: cover;
 	  -webkit-background-size: cover;
 	  -moz-background-size: cover;
@@ -1935,7 +1935,7 @@ color: #53d0c6;
   margin-top: 1.2em;
 	}
 	.banner {
-	  background: url(../images/banner.jpg) no-repeat center top;
+	  background: url(../../assets/images/banner.jpg) no-repeat center top;
 	  background-size: cover;
 	  -webkit-background-size: cover;
 	  -moz-background-size: cover;
@@ -1944,7 +1944,7 @@ color: #53d0c6;
 	  min-height: 342px;
 	}
 	.banner.two {
-	  background: url(./app/images/banner-two.jpg) no-repeat center top;
+	  background: url(./assets/images/banner-two.jpg) no-repeat center top;
 	  background-size: cover;
 	  -webkit-background-size: cover;
 	  -moz-background-size: cover;
@@ -2021,7 +2021,7 @@ color: #53d0c6;
 	  display: block;
 	   width: 35px;
 	  height: 35px;
-	  background: url(../images/nav.png) no-repeat 0px 0px;
+	  background: url(../../assets/images/nav.png) no-repeat 0px 0px;
 	  display: block;
 	  position: absolute;
 	    right: 47px;
@@ -2046,7 +2046,7 @@ color: #53d0c6;
 	  margin: 0.1em 0;
 	}
 	.banner {
-	  background: url(../images/banner.jpg) no-repeat center top;
+	  background: url(../../assets/images/banner.jpg) no-repeat center top;
 	  background-size: cover;
 	  -webkit-background-size: cover;
 	  -moz-background-size: cover;
@@ -2103,7 +2103,7 @@ color: #53d0c6;
 	  padding: 2em 0 4em 0;
 	}
 	.banner.two {
-	  background: url(./app/images/banner-two.jpg) no-repeat center top;
+	  background: url(./assets/images/banner-two.jpg) no-repeat center top;
 	  background-size: cover;
 	  -webkit-background-size: cover;
 	  -moz-background-size: cover;
@@ -2178,7 +2178,7 @@ color: #53d0c6;
 	  display: block;
 	  width: 35px;
 	  height: 35px;
-	  background: url(../images/nav.png) no-repeat 0px 0px;
+	  background: url(../../assets/images/nav.png) no-repeat 0px 0px;
 	  display: block;
 	  position: absolute;
 	  right: 31px;
@@ -2223,7 +2223,7 @@ color: #53d0c6;
 	.callbacks_nav {
 	  height: 40px;
       width: 20px;
-      background: transparent url("../images/arrows.png") no-repeat left top;
+      background: transparent url("../../assets/images/arrows.png") no-repeat left top;
       margin-top: 8%;
       background-size: 191%
 	}

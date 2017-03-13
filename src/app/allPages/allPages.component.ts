@@ -1,6 +1,6 @@
 import {Component, OnInit} from "@angular/core";
 import {Announcement} from "../announcement";
-import {AnnouncementService} from "../announcementService";
+import {AnnouncementService} from "../services/announcementService";
 
 @Component({
   selector: 'allPages-component',

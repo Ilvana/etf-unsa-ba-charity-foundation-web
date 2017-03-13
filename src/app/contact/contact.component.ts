@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
-import {ContactService} from "../contactService";
-import {Contact} from "../contact";
+import {ContactService} from "../services/contactService";
+import {Contact} from "../models/contact";
 import {Observable} from "rxjs";
 
 @Component({
