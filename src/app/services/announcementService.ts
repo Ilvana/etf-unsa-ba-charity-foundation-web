@@ -32,4 +32,10 @@ export class AnnouncementService {
       .map((res: Response)=>res.json())
       .catch((error: any)=>Observable.throw(error.json().error || 'Server error'))
   }
+
+  getAnnouncementById(id: String): Observable<Announcement> {
+    return this.http.get(`${this.announcementUrl}/${id}`)
+      .map((res: Response)=>res.json())
+      .catch((error: any)=>Observable.throw(error.json().error || 'Server error'))
+  }
 }

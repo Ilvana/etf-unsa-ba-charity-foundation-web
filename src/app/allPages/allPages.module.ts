@@ -3,9 +3,10 @@ import {HttpModule} from "@angular/http";
 import {BrowserModule} from "@angular/platform-browser";
 import {AllPagesComponent} from "./allPages.component";
 import {AnnouncementService} from "../services/announcementService";
+import {RouterModule} from "@angular/router";
 
 @NgModule({
-  imports: [BrowserModule, HttpModule],
+  imports: [BrowserModule, HttpModule, RouterModule],
   declarations: [AllPagesComponent],
   exports: [AllPagesComponent, HttpModule],
   providers: [AnnouncementService]
