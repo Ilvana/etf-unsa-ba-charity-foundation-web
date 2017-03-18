@@ -55,28 +55,67 @@
                     <h6 class="modal-subtitle">Personal Information</h6>
                     <p></p>
                     <p class="your-para">Your username:</p>
-                    <input type="text" class="form-control" id="username" [(ngModel)]="model.username" name="username"
-                           placeholder="Username">
-                    <p></p>
+                    <input type="text" class="form-control" id="username" [(ngModel)]="model.username"
+                           #username="ngModel" name="username"
+                           placeholder="Username" required>
                     <div class="clearfix"></div>
+
+                    <div *ngIf="username.errors && (username.touched || username.dirty)" class="alert alert-danger">
+                      <div [hidden]="!username.errors.required">
+                        <p>Username is required.</p>
+                      </div>
+                    </div>
+
                     <p class="your-para">Your password:</p>
-                    <input type="text" class="form-control" id="password" [(ngModel)]="model.password" name="username"
-                           placeholder="Password">
+                    <input type="text" class="form-control" id="password" #password="ngModel"
+                           [(ngModel)]="model.password" name="username"
+                           placeholder="Password" required>
                     <div class="clearfix"></div>
+                    <div *ngIf="password.errors && (password.touched || password.dirty)" class="alert alert-danger">
+                      <div [hidden]="!password.errors.required">
+                        <p>Password is required.</p>
+                      </div>
+                    </div>
+
                     <p class="your-para">Your mail:</p>
-                    <input type="text" class="form-control" id="email" [(ngModel)]="model.email" name="email"
-                           placeholder="Email">
+                    <input type="text" class="form-control" id="email" #email="ngModel" [(ngModel)]="model.email"
+                           name="email"
+                           placeholder="Email" required>
                     <div class="clearfix"></div>
+
+                    <div *ngIf="email.errors && (email.touched || email.dirty)" class="alert alert-danger">
+                      <div [hidden]="!email.errors.required">
+                        <p>Email is required.</p>
+                      </div>
+                    </div>
+
                     <p class="your-para">Your telephone:</p>
-                    <input type="text" class="form-control" id="telephone" [(ngModel)]="model.telephone"
-                           name="telephone" placeholder="Phone">
+                    <input type="text" class="form-control" id="telephone" #telephone="ngModel"
+                           [(ngModel)]="model.telephone"
+                           name="telephone" placeholder="Phone" required>
                     <div class="clearfix"></div>
+
+                    <div *ngIf="telephone.errors && (telephone.touched || telephone.dirty)" class="alert alert-danger">
+                      <div [hidden]="!telephone.errors.required">
+                        <p>Telephone is required.</p>
+                      </div>
+                    </div>
+
                     <p class="your-para">Your address:</p>
-                    <textarea id="message" class="form-control" [(ngModel)]="model.address" name="address"
-                              placeholder="Address"></textarea>
+                    <textarea id="message" class="form-control" #address="ngModel" [(ngModel)]="model.address"
+                              name="address"
+                              placeholder="Address" required></textarea>
                     <div class="clearfix"></div>
+
+                    <div *ngIf="address.errors && (address.touched || address.dirty)" class="alert alert-danger">
+                      <div [hidden]="!address.errors.required">
+                        <p>Address is required.</p>
+                      </div>
+                    </div>
+
                     <div class="donate">
                       <input type="submit" style="float: right" value="Add user">
+
                     </div>
                   </form>
                 </div>
@@ -115,13 +154,15 @@
               <td>
                 <button class="btn btn-danger" (click)="removeAnnouncement(announcement.id)"><span
                   class="glyphicon glyphicon-remove"></span></button>
-                <button class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span></button>
+                <button class="btn btn-warning" (click)="editAnnouncement(announcement.id)"
+                        data-toggle="modal" data-target="#announcementModal"><span class="glyphicon glyphicon-edit"></span></button>
               </td>
             </tr>
             </tbody>
           </table>
           <div>
-            <button type="button" class="btn btn-info" style="float: right;" data-toggle="modal" data-target="#announcementModal">
+            <button type="button" class="btn btn-info" style="float: right;" data-toggle="modal"
+                    data-target="#announcementModal">
               Add new announcement
             </button>
           </div>
@@ -136,28 +177,52 @@
                   <h4 class="modal-title">Add announcement</h4>
                 </div>
                 <div class="modal-body">
-                  <form (ngSubmit)="addAnnouncement()">
+                  <form>
                     <h6 class="modal-subtitle">Personal Information</h6>
                     <p></p>
                     <p class="your-para">Text:</p>
-                    <input type="text" class="form-control" id="text" [(ngModel)]="modelAnnoucement.text" name="text"
-                           placeholder="Text">
-                    <p></p>
+                    <input type="text" class="form-control" id="text" #text="ngModel"
+                           [(ngModel)]="modelAnnoucement.text" name="text"
+                           placeholder="Text" required>
+
+                    <div *ngIf="text.errors && (text.touched || text.dirty)" class="alert alert-danger">
+                      <div [hidden]="!text.errors.required">
+                        <p>Text is required.</p>
+                      </div>
+                    </div>
+
                     <div class="clearfix"></div>
                     <p class="your-para">Date:</p>
                     <input type="text" class="form-control" id="date" [(ngModel)]="modelAnnoucement.date" name="date"
                            placeholder="Date">
                     <div class="clearfix"></div>
+
                     <p class="your-para">Telephone:</p>
-                    <input type="text" class="form-control" id="telephone" [(ngModel)]="modelAnnoucement.telephone"
-                           name="telephone" placeholder="Phone">
+                    <input type="text" class="form-control" id="telephone" #telephone="ngModel"
+                           [(ngModel)]="modelAnnoucement.telephone"
+                           name="telephone" placeholder="Phone" required>
                     <div class="clearfix"></div>
+
+                    <div *ngIf="telephone.errors && (telephone.touched || telephone.dirty)" class="alert alert-danger">
+                      <div [hidden]="!telephone.errors.required">
+                        <p>Phone is required.</p>
+                      </div>
+                    </div>
+
                     <p class="your-para">Account:</p>
-                    <input type="text" class="form-control" id="account" [(ngModel)]="modelAnnoucement.account"
-                           name="account" placeholder="Account">
+                    <input type="text" class="form-control" id="account" #account="ngModel"
+                           [(ngModel)]="modelAnnoucement.account"
+                           name="account" placeholder="Account" required>
                     <div class="clearfix"></div>
+
+                    <div *ngIf="account.errors && (account.touched || account.dirty)" class="alert alert-danger">
+                      <div [hidden]="!account.errors.required">
+                        <p>Account is required.</p>
+                      </div>
+                    </div>
+
                     <div class="donate">
-                      <input type="submit" style="float: right" value="Add announcement">
+                      <input type="submit" style="float: right" (click)="addAnnouncement(modelAnnoucement)" value="Add announcement">
                     </div>
                   </form>
                 </div>

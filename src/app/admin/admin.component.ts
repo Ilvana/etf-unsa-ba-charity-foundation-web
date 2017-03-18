@@ -14,7 +14,7 @@ import {CommentService} from "../services/commentService";
 
 export class AdminComponent implements OnInit {
   private model = new User(1, '', '', '', 1, '', '');
-  private modelAnnoucement = new Announcement(1, '', '', '', 1, '');
+  private modelAnnoucement = new Announcement(1, '', '', '', 2, '');
   users: User[];
   announcements: Announcement[];
   comments: Comment[];
@@ -75,6 +75,12 @@ export class AdminComponent implements OnInit {
 
   addAnnouncement() {
     this.announcementService.addAnnouncement(this.modelAnnoucement).subscribe(announcement=>this.announcement = announcement, err=> {
+      console.log(err)
+    })
+  }
+
+  editAnnouncement(id: String) {
+    this.announcementService.getAnnouncementById(id).subscribe(modelAnnoucement=>this.modelAnnoucement = modelAnnoucement, err=> {
       console.log(err)
     })
   }

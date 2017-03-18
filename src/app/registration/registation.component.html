@@ -11,19 +11,52 @@
             <h6 class="modal-subtitle">Personal Information</h6>
             <div class="dt-inner">
               <div class="dt">
-                <input type="text" id="username" [(ngModel)]="model.username" name="username" placeholder="Username">
-                <input type="text" id="password" [(ngModel)]="model.password" name="username" placeholder="Password">
+                <input type="text" id="username" [(ngModel)]="model.username" #username="ngModel" required name="username" placeholder="Username">
+                <input type="text" id="password" [(ngModel)]="model.password" #password="ngModel" name="username" placeholder="Password">
                 <div class="clearfix"></div>
               </div>
+
+              <div *ngIf="username.errors && (username.touched || username.dirty)" class="alert alert-danger">
+                <div [hidden]="!username.errors.required">
+                  <p>Username is required.</p>
+                </div>
+              </div>
+
+              <div *ngIf="password.errors && (password.touched || password.dirty)" class="alert alert-danger">
+                <div [hidden]="!password.errors.required">
+                  <p>Password is required.</p>
+                </div>
+              </div>
+
               <div class="dt">
-                <input type="text" id="email" [(ngModel)]="model.email" name="email" placeholder="Email">
-                <input type="text" id="telephone" [(ngModel)]="model.telephone" name="telephone" placeholder="Phone">
+                <input type="text" id="email" [(ngModel)]="model.email" #email="ngModel" name="email" placeholder="Email">
+                <input type="text" id="telephone" [(ngModel)]="model.telephone" #telephone="ngModel" name="telephone" placeholder="Phone">
                 <div class="clearfix"></div>
               </div>
+
+              <div *ngIf="email.errors && (email.touched || email.dirty)" class="alert alert-danger">
+                <div [hidden]="!email.errors.required">
+                  <p>Email is required.</p>
+                </div>
+              </div>
+
+              <div *ngIf="telephone.errors && (telephone.touched || telephone.dirty)" class="alert alert-danger">
+                <div [hidden]="!telephone.errors.required">
+                  <p>Telephone is required.</p>
+                </div>
+              </div>
+
               <div class="dt">
                 <textarea id="message" [(ngModel)]="model.address" name = "address" placeholder="Address"></textarea>
                 <div class="clearfix"></div>
               </div>
+
+              <div *ngIf="address.errors && (address.touched || address.dirty)" class="alert alert-danger">
+                <div [hidden]="!address.errors.required">
+                  <p>Address is required.</p>
+                </div>
+              </div>
+
               <div class="donate">
                 <input type="submit" value="Register Now">
               </div>
