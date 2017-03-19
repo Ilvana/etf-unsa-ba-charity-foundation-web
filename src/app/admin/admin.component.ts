@@ -5,7 +5,6 @@ import {AnnouncementService} from "../services/announcementService";
 import {Announcement} from "../announcement";
 import {CommentService} from "../services/commentService";
 
-
 @Component({
   selector: 'admin-component',
   templateUrl: './admin.component.html',
@@ -14,15 +13,19 @@ import {CommentService} from "../services/commentService";
 
 export class AdminComponent implements OnInit {
   private model = new User(1, '', '', '', 1, '', '');
-  private modelAnnoucement = new Announcement(1, '', '', '', 2, '');
+  private modelAnnoucement = new Announcement(1, '', '', '', 221212, '');
   users: User[];
   announcements: Announcement[];
   comments: Comment[];
   user: User;
   announcement: Announcement;
   comment: Comment;
+  showEditButton: boolean;
+  showEditButtonUsers: boolean;
 
   constructor(private userService: UserService, private announcementService: AnnouncementService, private commentService: CommentService) {
+    this.showEditButton = false;
+    this.showEditButtonUsers = false;
   }
 
   ngOnInit() {
@@ -79,9 +82,33 @@ export class AdminComponent implements OnInit {
     })
   }
 
-  editAnnouncement(id: String) {
+  getAnnouncement(id: String) {
+    this.showEditButton = true;
     this.announcementService.getAnnouncementById(id).subscribe(modelAnnoucement=>this.modelAnnoucement = modelAnnoucement, err=> {
       console.log(err)
     })
+  }
+
+  editAnnouncement() {
+    this.showEditButton = false;
+    this.announcementService.updateAnnouncement(this.modelAnnoucement).subscribe(announcement=>this.announcement = announcement, err=> {
+      console.log(err)
+    })
+    this.modelAnnoucement = new Announcement(1, '', '', '', 221212, '');
+  }
+
+  getUser(id: String) {
+    this.showEditButtonUsers = true;
+    this.userService.getUserById(id).subscribe(model=>this.model = model, err=> {
+      console.log(err)
+    })
+  }
+
+  editUser() {
+    this.showEditButtonUsers = false;
+    this.userService.updateUser(this.model).subscribe(user=>this.user = user, err=> {
+      console.log(err)
+    })
+    this.model = new User(1, '', '', '', 1, '', '');
   }
 }

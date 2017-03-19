@@ -28,20 +28,22 @@
               <td>
                 <button class="btn btn-danger" (click)="removeUser(user.id)"><span
                   class="glyphicon glyphicon-remove"></span></button>
-                <button class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span></button>
+                <button class="btn btn-warning" (click)="getUser(user.id)" data-toggle="modal"
+                        data-target="#userModal"><span class="glyphicon glyphicon-edit"></span></button>
               </td>
             </tr>
             </tbody>
           </table>
 
           <div>
-            <button type="button" class="btn btn-info" style="float: right;" data-toggle="modal" data-target="#myModal">
+            <button type="button" class="btn btn-info" style="float: right;" data-toggle="modal"
+                    data-target="#userModal">
               Add new user
             </button>
           </div>
 
           <!-- Modal -->
-          <div id="myModal" class="modal fade" role="dialog">
+          <div id="userModal" class="modal fade" role="dialog">
             <div class="modal-dialog">
 
               <!-- Modal content-->
@@ -51,7 +53,7 @@
                   <h4 class="modal-title">Add user</h4>
                 </div>
                 <div class="modal-body">
-                  <form (ngSubmit)="addUser()">
+                  <form>
                     <h6 class="modal-subtitle">Personal Information</h6>
                     <p></p>
                     <p class="your-para">Your username:</p>
@@ -114,9 +116,12 @@
                     </div>
 
                     <div class="donate">
-                      <input type="submit" style="float: right" value="Add user">
-
+                      <input type="submit" style="float: right" (click)="addUser()" data-dismiss="modal"
+                             value="Add user">
+                      <input type="submit" [hidden]="!showEditButtonUsers" style="float: right" (click)="editUser()"
+                             data-dismiss="modal" value="Edit user">
                     </div>
+
                   </form>
                 </div>
                 <div class="clearfix"></div>
@@ -154,8 +159,9 @@
               <td>
                 <button class="btn btn-danger" (click)="removeAnnouncement(announcement.id)"><span
                   class="glyphicon glyphicon-remove"></span></button>
-                <button class="btn btn-warning" (click)="editAnnouncement(announcement.id)"
-                        data-toggle="modal" data-target="#announcementModal"><span class="glyphicon glyphicon-edit"></span></button>
+                <button class="btn btn-warning" (click)="getAnnouncement(announcement.id)"
+                        data-toggle="modal" data-target="#announcementModal"><span
+                  class="glyphicon glyphicon-edit"></span></button>
               </td>
             </tr>
             </tbody>
@@ -222,7 +228,13 @@
                     </div>
 
                     <div class="donate">
-                      <input type="submit" style="float: right" (click)="addAnnouncement(modelAnnoucement)" value="Add announcement">
+                      <input type="submit" style="float: right" (click)="addAnnouncement(modelAnnoucement)"
+                             data-dismiss="modal" value="Add announcement">
+                    </div>
+
+                    <div class="donate">
+                      <input type="submit" (click)="editAnnouncement(modelAnnoucement)"
+                             [hidden]="!showEditButton" data-dismiss="modal" value="Edit announcement">
                     </div>
                   </form>
                 </div>
@@ -260,7 +272,6 @@
               <td>
                 <button class="btn btn-danger" (click)="removeComment(comment.id)"><span
                   class="glyphicon glyphicon-remove"></span></button>
-                <button class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span></button>
               </td>
             </tr>
             </tbody>
