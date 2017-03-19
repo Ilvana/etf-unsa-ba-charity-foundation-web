@@ -28,8 +28,11 @@ export class SinglePageComponent implements OnInit {
   }
 
   addComment() {
-    this.commentService.addComment(this.model).subscribe(comment=>this.comment = comment, err => {
-      console.log(err);
-    });
+    this.sub = this.route.params.subscribe(params => {
+      let id = params['id'];
+      this.commentService.addComment(id, this.model).subscribe(comment=>this.comment = comment, err => {
+        console.log(err);
+      });
+    })
   }
 }
