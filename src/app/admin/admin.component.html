@@ -79,7 +79,7 @@
                       </div>
                     </div>
 
-                    <p class="your-para">Your mail:</p>
+                    <p class="your-para">Your email:</p>
                     <input type="text" class="form-control" id="email" #email="ngModel" [(ngModel)]="model.email"
                            name="email"
                            placeholder="Email" required>
@@ -100,18 +100,6 @@
                     <div *ngIf="telephone.errors && (telephone.touched || telephone.dirty)" class="alert alert-danger">
                       <div [hidden]="!telephone.errors.required">
                         <p>Telephone is required.</p>
-                      </div>
-                    </div>
-
-                    <p class="your-para">Your address:</p>
-                    <textarea id="message" class="form-control" #address="ngModel" [(ngModel)]="model.address"
-                              name="address"
-                              placeholder="Address" required></textarea>
-                    <div class="clearfix"></div>
-
-                    <div *ngIf="address.errors && (address.touched || address.dirty)" class="alert alert-danger">
-                      <div [hidden]="!address.errors.required">
-                        <p>Address is required.</p>
                       </div>
                     </div>
 

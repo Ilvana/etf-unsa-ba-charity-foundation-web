@@ -13,6 +13,16 @@ export class UserService {
   constructor(private http: Http) {
   }
 
+  registerUser(body: Object): Observable<User> {
+    let bodyString = JSON.stringify(body);
+    let headers = new Headers({'Content-Type': 'application/json'});
+    let options = new RequestOptions({headers: headers});
+
+    return this.http.post(this.userUrl+ '/register', bodyString, options)
+      .map((res: Response)=>res.json)
+      .catch((error: any)=>Observable.throw(error.json().error || 'Server error'));
+  }
+
   addUser(body: Object): Observable<User> {
     let bodyString = JSON.stringify(body);
     let headers = new Headers({'Content-Type': 'application/json'});

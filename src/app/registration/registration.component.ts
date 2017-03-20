@@ -15,8 +15,8 @@ export class RegistrationComponent {
   constructor(private userService: UserService) {
   }
 
-  addUser() {
-    this.userService.addUser(this.model).subscribe(user=>this.user = user, err=> {
+  registerUser() {
+    this.userService.registerUser(this.model).subscribe(user=>this.user = user, err=> {
       console.log(err);
     });
   }

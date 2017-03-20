@@ -6,7 +6,7 @@
         <h3 class="d-tittle">Registration Form</h3>
       </div>
       <div class="donation-body">
-        <form (ngSubmit)="addUser()">
+        <form (ngSubmit)="registerUser()">
           <div class="form-group">
             <h6 class="modal-subtitle">Personal Information</h6>
             <div class="dt-inner">
@@ -47,7 +47,7 @@
               </div>
 
               <div class="dt">
-                <textarea id="message" [(ngModel)]="model.address" name = "address" placeholder="Address"></textarea>
+                <textarea id="message" [(ngModel)]="model.address" #address="ngModel" name = "address" placeholder="Address"></textarea>
                 <div class="clearfix"></div>
               </div>
 
