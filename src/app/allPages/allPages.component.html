@@ -2,7 +2,7 @@
   <div class="container">
     <h3 class="tittle">News</h3>
     <div class="news-article">
-      <div *ngFor="let announcement of announcements" class="col-md-6 article-post">
+      <div *ngFor="let announcement of pagedItems" class="col-md-6 article-post">
         <a [routerLink]="['/singlePage', {id: announcement.id}]"><img src="./assets/images/n1.jpg" alt="img07"/></a>
         <div class="col-md-3 post-meta">
           <div class="meta-icon">
@@ -30,16 +30,22 @@
       <div class="clearfix"> </div>
       <!--start-blog-pagenate-->
       <div class="blog-pagenat">
-        <ul>
-          <li><a class="frist" href="#">Prev</a></li>
-          <li><a href="#">1</a></li>
-          <li><a href="#">2</a></li>
-          <li><a href="#">3</a></li>
-          <li><a href="#">4</a></li>
-          <li><a href="#">5</a></li>
-          <li><a href="#">6</a></li>
-          <li><a class="last" href="#">Next</a></li>
-          <div class="clearfix"> </div>
+        <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+          <li [ngClass]="{disabled:pager.currentPage === 1}">
+            <a (click)="setPage(1)">First</a>
+          </li>
+          <li [ngClass]="{disabled:pager.currentPage === 1}">
+            <a (click)="setPage(pager.currentPage - 1)">Previous</a>
+          </li>
+          <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+            <a (click)="setPage(page)">{{page}}</a>
+          </li>
+          <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+            <a (click)="setPage(pager.currentPage + 1)">Next</a>
+          </li>
+          <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+            <a (click)="setPage(pager.totalPages)">Last</a>
+          </li>
         </ul>
       </div>
       <!--//End-blog-pagenate-->
