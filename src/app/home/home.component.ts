@@ -20,6 +20,7 @@ export class HomeComponent implements OnInit{
   }
 
   getAnnouncements() {
+    localStorage.setItem("ilvana", "ilvana");
     this.announcementService.getAnnouncements().subscribe(announcements=>this.announcements = announcements, err => {
       console.log(err);
     });

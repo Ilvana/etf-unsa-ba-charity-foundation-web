@@ -4,6 +4,7 @@ import {UserService} from "../services/userService";
 import {AnnouncementService} from "../services/announcementService";
 import {Announcement} from "../announcement";
 import {CommentService} from "../services/commentService";
+import { AuthHttp } from 'angular2-jwt';
 
 @Component({
   selector: 'admin-component',
@@ -12,6 +13,8 @@ import {CommentService} from "../services/commentService";
 })
 
 export class AdminComponent implements OnInit {
+  jwt: string;
+  decodedJwt: string;
   private model = new User(1, '', '', '', 1, '', '');
   private modelAnnoucement = new Announcement(1, '', '', '', 221212, '');
   users: User[];
@@ -23,9 +26,11 @@ export class AdminComponent implements OnInit {
   showEditButton: boolean;
   showEditButtonUsers: boolean;
 
-  constructor(private userService: UserService, private announcementService: AnnouncementService, private commentService: CommentService) {
+  constructor(private userService: UserService, private announcementService: AnnouncementService, private commentService: CommentService,  public authHttp: AuthHttp) {
     this.showEditButton = false;
     this.showEditButtonUsers = false;
+    this.jwt = localStorage.getItem('id_token');
+    this.decodedJwt = this.jwt && window.jwt_decode(this.jwt);
   }
 
   ngOnInit() {

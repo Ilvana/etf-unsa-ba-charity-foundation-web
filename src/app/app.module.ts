@@ -23,6 +23,9 @@ import {RegistrationComponent} from "./registration/registration.component";
 import {RegistrationModule} from "./registration/registration.module";
 import {AdminModule} from "./admin/admin.module";
 import {AdminComponent} from "./admin/admin.component";
+import {AUTH_PROVIDERS} from 'angular2-jwt';
+import {AuthGuard} from "./services/AuthGuard";
+import {Login} from "./login/login.component";
 
 const appRoutes: Routes = [
   {
@@ -59,7 +62,12 @@ const appRoutes: Routes = [
   },
   {
     path: 'admin',
-    component: AdminComponent
+    component: AdminComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'login',
+    component: Login
   },
   {
     path: '',
@@ -70,7 +78,7 @@ const appRoutes: Routes = [
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent, Login
   ],
   imports: [
     BrowserModule,
@@ -87,7 +95,7 @@ const appRoutes: Routes = [
     AdminModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [AuthGuard, ...AUTH_PROVIDERS],
   bootstrap: [AppComponent]
 })
 export class AppModule {
