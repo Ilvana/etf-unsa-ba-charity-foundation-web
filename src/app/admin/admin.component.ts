@@ -4,11 +4,13 @@ import {UserService} from "../services/userService";
 import {AnnouncementService} from "../services/announcementService";
 import {Announcement} from "../announcement";
 import {CommentService} from "../services/commentService";
+import {AuthenticationService} from "../services/authentificationService";
 
 @Component({
   selector: 'admin-component',
   templateUrl: './admin.component.html',
-  styleUrls: ['../css/app.bootstrap.css', '../css/app.style.css', '../css/app.swipebox.css']
+  styleUrls: ['../css/app.bootstrap.css', '../css/app.style.css', '../css/app.swipebox.css'],
+  providers: [AuthenticationService]
 })
 
 export class AdminComponent implements OnInit {
@@ -23,12 +25,13 @@ export class AdminComponent implements OnInit {
   showEditButton: boolean;
   showEditButtonUsers: boolean;
 
-  constructor(private userService: UserService, private announcementService: AnnouncementService, private commentService: CommentService) {
+  constructor(private userService: UserService, private announcementService: AnnouncementService, private commentService: CommentService, private authentificationService: AuthenticationService) {
     this.showEditButton = false;
     this.showEditButtonUsers = false;
   }
 
   ngOnInit() {
+    this.authentificationService.checkCredentials();
     this.getAllUsers();
     this.getAllAnnouncements();
     this.getAllComments();
@@ -110,5 +113,9 @@ export class AdminComponent implements OnInit {
       console.log(err)
     })
     this.model = new User(1, '', '', '', 1, '', '');
+  }
+
+  logout() {
+    this.authentificationService.logout();
   }
 }
