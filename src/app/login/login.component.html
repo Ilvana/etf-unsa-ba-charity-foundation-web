@@ -1,0 +1,26 @@
+<div class="contact" style="margin: 0 auto">
+  <div class="container">
+    <h3 class="tittle">Welcome</h3>
+    <div class="contact-form">
+      <div class="col-md-6 contact-grid">
+        <p class="your-para">Your username:</p>
+        <input [(ngModel)]="user.username" id="username"
+               type="username" class="validate" class="form-control">
+        <label for="username"></label>
+
+        <p class="your-para">Your password:</p>
+        <input [(ngModel)]="user.password" id="password" style="alignment: center"
+               type="password" class="validate" class="form-control">
+
+        <span>{{errorMsg}}</span>
+        <div class="clearfix"></div>
+
+        <div class="donate">
+          <input type="submit" (click)="login()" value="Login" style="float:right;">
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="clearfix"></div>

@@ -23,6 +23,7 @@ import {RegistrationComponent} from "./registration/registration.component";
 import {RegistrationModule} from "./registration/registration.module";
 import {AdminModule} from "./admin/admin.module";
 import {AdminComponent} from "./admin/admin.component";
+import {LoginComponent} from "./login/login.component";
 
 const appRoutes: Routes = [
   {
@@ -62,6 +63,10 @@ const appRoutes: Routes = [
     component: AdminComponent
   },
   {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
     path: '',
     redirectTo: '/home',
     pathMatch: 'full'
@@ -70,7 +75,7 @@ const appRoutes: Routes = [
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent, LoginComponent
   ],
   imports: [
     BrowserModule,
