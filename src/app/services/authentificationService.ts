@@ -1,19 +1,11 @@
 import {Injectable} from "@angular/core";
 import {Router} from "@angular/router";
-import {UserService} from "./userService";
-import {User} from "../models/user";
 
 export class UserAuth {
   constructor(public username: string,
               public password: string) {
   }
 }
-
-// var users = [
-//   new UserAuth('admin@admin.com', 'adm9'),
-//   new UserAuth('user1@gmail.com', 'a23')
-// ];
-
 
 @Injectable()
 export class AuthenticationService {
