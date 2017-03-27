@@ -7,17 +7,17 @@ import {User} from "../models/user";
   selector: "login-form",
   templateUrl: "login.component.html",
   styleUrls: ['../css/app.bootstrap.css', '../css/app.style.css', '../css/app.swipebox.css'],
-  providers: [AuthenticationService]
+  providers: [ AuthenticationService ]
 })
 
 export class LoginComponent {
 
   public user = new UserAuth('', '');
   public errorMsg = '';
-  users : User[];
+  users: User[];
 
   constructor(private _service: AuthenticationService, private userService: UserService) {
-    this.userService.getUsers().subscribe(users=>this.users=users);
+    this.userService.getUsers().subscribe(users=>this.users = users);
   }
 
   login() {

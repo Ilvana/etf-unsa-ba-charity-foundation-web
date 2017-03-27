@@ -1,7 +1,7 @@
 import {Component, OnInit} from "@angular/core";
 import {CommentService} from "../services/commentService";
 import {AnnouncementService} from "../services/announcementService";
-import {Announcement} from "../announcement";
+import {Announcement} from "../models/announcement";
 import {ActivatedRoute} from "@angular/router";
 
 @Component({

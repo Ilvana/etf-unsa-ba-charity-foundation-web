@@ -1,5 +1,5 @@
 import {Component, OnInit} from "@angular/core";
-import {Announcement} from "../announcement";
+import {Announcement} from "../models/announcement";
 import {AnnouncementService} from "../services/announcementService";
 import {PagerService} from "../util/pager.service";
 
@@ -11,7 +11,6 @@ import {PagerService} from "../util/pager.service";
 
 export class AllPagesComponent implements OnInit {
   announcements: Announcement[];
-  mode = 'Observable';
   pager: any = {};
   pagedAnnouncements: Announcement[];
 
@@ -39,5 +38,4 @@ export class AllPagesComponent implements OnInit {
     this.pager = this.pagerService.getPager(this.announcements.length, page);
     this.pagedAnnouncements = this.announcements.slice(this.pager.startIndex, this.pager.endIndex + 1);
   }
-
 }

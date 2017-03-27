@@ -2,7 +2,7 @@ import {Component, OnInit} from "@angular/core";
 import {User} from "../models/user";
 import {UserService} from "../services/userService";
 import {AnnouncementService} from "../services/announcementService";
-import {Announcement} from "../announcement";
+import {Announcement} from "../models/announcement";
 import {CommentService} from "../services/commentService";
 import {AuthenticationService} from "../services/authentificationService";
 import {PagerService} from "../util/pager.service";
