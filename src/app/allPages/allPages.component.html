@@ -2,7 +2,7 @@
   <div class="container">
     <h3 class="tittle">News</h3>
     <div class="news-article">
-      <div *ngFor="let announcement of pagedItems" class="col-md-6 article-post">
+      <div *ngFor="let announcement of pagedAnnouncements" class="col-md-6 article-post">
         <a [routerLink]="['/singlePage', {id: announcement.id}]"><img src="./assets/images/n1.jpg" alt="img07"/></a>
         <div class="col-md-3 post-meta">
           <div class="meta-icon">

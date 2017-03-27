@@ -5,6 +5,7 @@ import {AnnouncementService} from "../services/announcementService";
 import {Announcement} from "../announcement";
 import {CommentService} from "../services/commentService";
 import {AuthenticationService} from "../services/authentificationService";
+import {PagerService} from "../util/pager.service";
 
 @Component({
   selector: 'admin-component',
@@ -24,8 +25,14 @@ export class AdminComponent implements OnInit {
   comment: Comment;
   showEditButton: boolean;
   showEditButtonUsers: boolean;
+  pagerUsers: any = {};
+  pagedUsers: User[];
+  pagerComments: any = {};
+  pagedComments: User[];
+  pager: any = {};
+  pagedAnnouncements: Announcement[];
 
-  constructor(private userService: UserService, private announcementService: AnnouncementService, private commentService: CommentService, private authentificationService: AuthenticationService) {
+  constructor(private userService: UserService, private announcementService: AnnouncementService, private commentService: CommentService, private authentificationService: AuthenticationService, private pagerService: PagerService) {
     this.showEditButton = false;
     this.showEditButtonUsers = false;
   }
@@ -38,21 +45,32 @@ export class AdminComponent implements OnInit {
   }
 
   getAllUsers() {
-    this.userService.getUsers().subscribe(users=>this.users = users, err=> {
-      console.log(err)
-    })
+    this.userService.getUsers().subscribe(users=> {
+        this.users = users;
+        this.setUsersPage(1);
+      },
+      err=> {
+        console.log(err)
+      })
   }
 
   getAllAnnouncements() {
-    this.announcementService.getAnnouncements().subscribe(announcements=>this.announcements = announcements, err=> {
+    this.announcementService.getAnnouncements().subscribe(announcements=> {
+      this.announcements = announcements;
+      this.setPage(1);
+    }, err => {
       console.log(err);
-    })
+    });
   }
 
   getAllComments() {
-    this.commentService.getComments().subscribe(comments=>this.comments = comments, err=> {
-      console.log(err)
-    })
+    this.commentService.getComments().subscribe(comments=> {
+        this.comments = comments;
+        this.setCommentsPage(1);
+      },
+      err=> {
+        console.log(err)
+      })
   }
 
   removeUser(id: String) {
@@ -117,5 +135,32 @@ export class AdminComponent implements OnInit {
 
   logout() {
     this.authentificationService.logout();
+  }
+
+  setPage(page: number) {
+    if (page < 1 || page > this.pager.totalPages) {
+      return;
+    }
+
+    this.pager = this.pagerService.getPager(this.announcements.length, page);
+    this.pagedAnnouncements = this.announcements.slice(this.pager.startIndex, this.pager.endIndex + 1);
+  }
+
+  setUsersPage(page: number) {
+    if (page < 1 || page > this.pagerUsers.totalPages) {
+      return;
+    }
+
+    this.pagerUsers = this.pagerService.getPager(this.users.length, page);
+    this.pagedUsers = this.users.slice(this.pagerUsers.startIndex, this.pagerUsers.endIndex + 1);
+  }
+
+  setCommentsPage(page: number) {
+    if (page < 1 || page > this.pagerComments.totalPages) {
+      return;
+    }
+
+    this.pagerComments = this.pagerService.getPager(this.comments.length, page);
+    this.pagedComments = this.comments.slice(this.pagerComments.startIndex, this.pagerComments.endIndex + 1);
   }
 }

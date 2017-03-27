@@ -2,7 +2,7 @@
   <div class="container">
     <h3 class="tittle">Blog</h3>
     <div class="news-article">
-      <div class="article-post">
+      <div class="article-post" *ngIf="announcement">
         <a href="#"><img src="./assets/images/single.jpg" alt="img07"/></a>
         <div class="col-md-3 post-meta">
           <div class="meta-icon">
@@ -13,11 +13,11 @@
           <ul class="ad-info">
             <li>21 Aug'15</li>
             <li><a href="#">John Doe</a></li>
-            <li><a href="#">24 Comments</a></li>
+            <li><a href="#">{{announcement.comments.length}} Comments</a></li>
           </ul>
           <div class="clearfix"></div>
         </div>
-        <div class="col-md-9 post-details" *ngIf="announcement">
+        <div class="col-md-9 post-details">
           <a href="#"><h3>To Protect Humanity</h3></a>
           <p>{{announcement.text}}</p>
         </div>

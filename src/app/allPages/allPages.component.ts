@@ -13,7 +13,7 @@ export class AllPagesComponent implements OnInit {
   announcements: Announcement[];
   mode = 'Observable';
   pager: any = {};
-  pagedItems: Announcement[];
+  pagedAnnouncements: Announcement[];
 
   constructor(private announcementService: AnnouncementService, private pagerService: PagerService) {
   }
@@ -37,7 +37,7 @@ export class AllPagesComponent implements OnInit {
     }
 
     this.pager = this.pagerService.getPager(this.announcements.length, page);
-    this.pagedItems = this.announcements.slice(this.pager.startIndex, this.pager.endIndex + 1);
+    this.pagedAnnouncements = this.announcements.slice(this.pager.startIndex, this.pager.endIndex + 1);
   }
 
 }
