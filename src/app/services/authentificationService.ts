@@ -33,9 +33,4 @@ export class AuthenticationService {
       this._router.navigate(['/login']);
     }
   }
-
-  logout() {
-    localStorage.removeItem("user");
-    this._router.navigate(['/login']);
-  }
 }

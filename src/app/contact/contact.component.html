@@ -3,9 +3,10 @@
     <h3 class="tittle">Contact Us</h3>
     <div class="contact-form">
       <div class="col-md-6 contact-grid">
-        <form (ngSubmit)="onSubmit()" >
+        <form (ngSubmit)="onSubmit()">
           <p class="your-para">Your mail:</p>
-          <input [(ngModel)]="model.to" name="to" #to="ngModel" class="form-control" id="to" type="text" value="" required onfocus="this.value='';" onblur="if (this.value == '') {this.value ='';}">
+          <input [(ngModel)]="model.to" name="to" #to="ngModel" class="form-control" id="to" type="text" value=""
+                 required onfocus="this.value='';" onblur="if (this.value == '') {this.value ='';}">
 
           <div *ngIf="to.errors && (to.dirty || to.touched)"
                class="alert alert-danger">
@@ -15,7 +16,8 @@
           </div>
 
           <p class="your-para">Your message:</p>
-          <textarea [(ngModel)]="model.message"  name="message" #message="ngModel" class="form-control" id ="message" type="text" value="" required onfocus="this.value='';"
+          <textarea [(ngModel)]="model.message" name="message" #message="ngModel" class="form-control" id="message"
+                    type="text" value="" required onfocus="this.value='';"
                     onblur="if (this.value == '') {this.value = '';}"></textarea>
 
           <div *ngIf="message.errors && (message.dirty || message.touched)"
@@ -31,23 +33,22 @@
         </form>
       </div>
       <div class="col-md-6 contact-in">
-        <p class="sed-para"> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolor.</p>
-        <p class="para1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-          eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-          mollit anim id est laborum.Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in
-          a piece of classical Latin literature from 45 BC, making it over 2000 years old. </p>
+        <p class="sed-para"> Charity Foundation of ETF</p>
+        <p class="para1">Charity Foundation of ETF is an independent, neutral organization ensuring humanitarian protection and
+          assistance for victims of armed conflict and other situations of violence. It takes action in response to
+          emergencies and at the same time promotes respect for international humanitarian law and its implementation in
+          national law.
+        </p>
         <div class="more-address">
           <div class="address-more">
-            <p>My company name,</p>
-            <p>Lorem ipsum dolor,</p>
-            <p>Jasmin Dr 40 Fe 72. </p>
+            <p>Charity Foundation of ETF</p>
+            <p>71000 Sarajevo, Bosnia and Herzegovina</p>
+            <p>Zmaja od Bosne bb </p>
           </div>
           <div class="address-left">
             <p>Tel:1115550001</p>
             <p>Fax:190-4509-494</p>
-            <p><a href="mailto:info@example.com">mail@example.com</a></p>
+            <p><a href="mailto:info@example.com">ilvana.brankovic@gmail.com</a></p>
           </div>
           <div class="clearfix"></div>
         </div>

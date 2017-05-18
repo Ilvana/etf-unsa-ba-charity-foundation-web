@@ -11,23 +11,23 @@
             </div>
           </div>
           <ul class="ad-info">
-            <li>{{announcement.date}}</li>
-            <li> <a href="#">John Doe</a></li>
-            <li> <a href="#">{{announcement.comments.length}} Comments</a></li>
+            <li>{{announcement.date | date}}</li>
+            <li><a href="#">{{announcement.comments.length}} Comments</a></li>
           </ul>
-          <div class="clearfix"> </div>
+          <div class="clearfix"></div>
         </div>
         <div class="col-md-9 post-details">
-          <a [routerLink]="['/singlePage', {id: announcement.id}]"><h3>To Protect Humanity</h3></a>
+          <a [routerLink]="['/singlePage', {id: announcement.id}]"><h3>{{announcement.title}}</h3></a>
           <p>{{announcement.text}}</p>
           <div>
-            <a class="blog hvr-shutter-out-horizontal" [routerLink]="['/singlePage', {id: announcement.id}]" role="button">Read More</a>
+            <a class="blog hvr-shutter-out-horizontal" [routerLink]="['/singlePage', {id: announcement.id}]"
+               role="button">Read More</a>
           </div>
         </div>
         <!--post-details-->
-        <div class="clearfix"> </div>
+        <div class="clearfix"></div>
       </div>
-      <div class="clearfix"> </div>
+      <div class="clearfix"></div>
 
       <!--start-blog-pagenate-->
       <div class="blog-pagenat">

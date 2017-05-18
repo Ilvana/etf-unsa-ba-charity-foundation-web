@@ -5,6 +5,7 @@ export class Announcement{
     public date: string,
     public telephone: string,
     public account: number,
-    public picture: string
+    public picture: string,
+    public title: string
   ) {}
 }

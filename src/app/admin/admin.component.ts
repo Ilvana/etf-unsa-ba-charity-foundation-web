@@ -15,8 +15,8 @@ import {PagerService} from "../util/pager.service";
 })
 
 export class AdminComponent implements OnInit {
-  private model = new User(1, '', '', '', 1, '', '');
-  private modelAnnoucement = new Announcement(1, '', '', '', 221212, '');
+  private model = new User(1, '', '', '', 1, '', '', 1);
+  private modelAnnoucement = new Announcement(1, '', '', '', 221212, '', '');
   users: User[];
   announcements: Announcement[];
   comments: Comment[];
@@ -28,7 +28,7 @@ export class AdminComponent implements OnInit {
   pagerUsers: any = {};
   pagedUsers: User[];
   pagerComments: any = {};
-  pagedComments: User[];
+  pagedComments: Comment[];
   pager: any = {};
   pagedAnnouncements: Announcement[];
 
@@ -45,17 +45,17 @@ export class AdminComponent implements OnInit {
   }
 
   getAllUsers() {
-    this.userService.getUsers().subscribe(users=> {
+    this.userService.getUsers().subscribe(users => {
         this.users = users;
         this.setUsersPage(1);
       },
-      err=> {
+      err => {
         console.log(err)
       })
   }
 
   getAllAnnouncements() {
-    this.announcementService.getAnnouncements().subscribe(announcements=> {
+    this.announcementService.getAnnouncements().subscribe(announcements => {
       this.announcements = announcements;
       this.setPage(1);
     }, err => {
@@ -64,73 +64,73 @@ export class AdminComponent implements OnInit {
   }
 
   getAllComments() {
-    this.commentService.getComments().subscribe(comments=> {
+    this.commentService.getComments().subscribe(comments => {
         this.comments = comments;
         this.setCommentsPage(1);
       },
-      err=> {
+      err => {
         console.log(err)
       })
   }
 
   removeUser(id: String) {
-    this.userService.removeUser(id).subscribe(user=>this.user = user, err=> {
+    this.userService.removeUser(id).subscribe(user => this.user = user, err => {
       console.log(err)
     })
   }
 
   removeAnnouncement(id: String) {
-    this.announcementService.removeAnnouncement(id).subscribe(annoucement=>this.announcement = annoucement, err=> {
+    this.announcementService.removeAnnouncement(id).subscribe(annoucement => this.announcement = annoucement, err => {
       console.log(err)
     })
   }
 
   removeComment(id: String) {
-    this.commentService.removeComment(id).subscribe(comment=>this.comment = comment, err=> {
+    this.commentService.removeComment(id).subscribe(comment => this.comment = comment, err => {
       console.log(err)
     })
   }
 
   addUser() {
-    this.userService.addUser(this.model).subscribe(user=>this.user = user, err=> {
+    this.userService.addUser(this.model).subscribe(user => this.user = user, err => {
       console.log(err);
     });
   }
 
   addAnnouncement() {
-    this.announcementService.addAnnouncement(this.modelAnnoucement).subscribe(announcement=>this.announcement = announcement, err=> {
+    this.announcementService.addAnnouncement(this.modelAnnoucement).subscribe(announcement => this.announcement = announcement, err => {
       console.log(err)
     })
   }
 
   getAnnouncement(id: String) {
     this.showEditButton = true;
-    this.announcementService.getAnnouncementById(id).subscribe(modelAnnoucement=>this.modelAnnoucement = modelAnnoucement, err=> {
+    this.announcementService.getAnnouncementById(id).subscribe(modelAnnoucement => this.modelAnnoucement = modelAnnoucement, err => {
       console.log(err)
     })
   }
 
   editAnnouncement() {
     this.showEditButton = false;
-    this.announcementService.updateAnnouncement(this.modelAnnoucement).subscribe(announcement=>this.announcement = announcement, err=> {
+    this.announcementService.updateAnnouncement(this.modelAnnoucement).subscribe(announcement => this.announcement = announcement, err => {
       console.log(err)
     })
-    this.modelAnnoucement = new Announcement(1, '', '', '', 221212, '');
+    this.modelAnnoucement = new Announcement(1, '', '', '', 221212, '', '');
   }
 
   getUser(id: String) {
     this.showEditButtonUsers = true;
-    this.userService.getUserById(id).subscribe(model=>this.model = model, err=> {
+    this.userService.getUserById(id).subscribe(model => this.model = model, err => {
       console.log(err)
     })
   }
 
   editUser() {
     this.showEditButtonUsers = false;
-    this.userService.updateUser(this.model).subscribe(user=>this.user = user, err=> {
+    this.userService.updateUser(this.model).subscribe(user => this.user = user, err => {
       console.log(err)
     })
-    this.model = new User(1, '', '', '', 1, '', '');
+    this.model = new User(1, '', '', '', 1, '', '', 1);
   }
 
   logout() {
