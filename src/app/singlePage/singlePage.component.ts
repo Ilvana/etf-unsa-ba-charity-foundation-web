@@ -3,6 +3,7 @@ import {CommentService} from "../services/commentService";
 import {AnnouncementService} from "../services/announcementService";
 import {Announcement} from "../models/announcement";
 import {ActivatedRoute} from "@angular/router";
+import {Comment} from "../models/comment";
 
 @Component({
   selector: 'singlePage-component',

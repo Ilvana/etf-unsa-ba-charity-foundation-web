@@ -9,7 +9,7 @@ import {UserService} from "../services/userService";
 })
 
 export class RegistrationComponent {
-  private model = new User(1, '', '', '', 1, '', '');
+  private model = new User(1, '', '', '', 1, '', '',1);
   user: User;
 
   constructor(private userService: UserService) {

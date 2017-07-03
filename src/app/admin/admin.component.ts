@@ -3,6 +3,7 @@ import {User} from "../models/user";
 import {UserService} from "../services/userService";
 import {AnnouncementService} from "../services/announcementService";
 import {Announcement} from "../models/announcement";
+import {Comment} from "../models/comment";
 import {CommentService} from "../services/commentService";
 import {AuthenticationService} from "../services/authentificationService";
 import {PagerService} from "../util/pager.service";

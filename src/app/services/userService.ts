@@ -4,7 +4,6 @@ import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 import {User} from "../models/user";
-import {error} from ".";
 
 @Injectable()
 export class UserService {

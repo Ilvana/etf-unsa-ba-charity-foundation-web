@@ -1,4 +1,5 @@
 import {Injectable} from "@angular/core";
+import {Comment} from "../models/comment";
 import {Http, RequestOptions, Headers, Response} from "@angular/http";
 import {Observable} from "rxjs";
 

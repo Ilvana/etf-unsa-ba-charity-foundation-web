@@ -8,6 +8,7 @@ import {Input, Component} from "@angular/core";
 export class Tab {
 
   @Input() tabTitle: string;
+   public active:boolean;
 
   constructor(tabs:Tabs) {
     tabs.addTab(this);
