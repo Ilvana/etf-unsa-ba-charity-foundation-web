@@ -4,6 +4,7 @@ import {AnnouncementService} from "../services/announcementService";
 import {Announcement} from "../models/announcement";
 import {ActivatedRoute} from "@angular/router";
 import {Comment} from "../models/comment";
+import {User} from "../models/user";
 
 @Component({
   selector: 'singlePage-component',
@@ -12,7 +13,7 @@ import {Comment} from "../models/comment";
 })
 
 export class SinglePageComponent implements OnInit {
-  private model = new Comment(1, '', new Date(), 1, 1);
+  private model = new Comment(1, '', new Date(),  new User(26, '', '', '', 1, '', '', 1) , null);
   comment: Comment;
   private announcement: Announcement;
   private sub: any;

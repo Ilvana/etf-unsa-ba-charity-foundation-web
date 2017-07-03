@@ -1,9 +1,10 @@
+import {User} from "./user";
 export class Comment{
   constructor(
     public id: number,
     public text: String,
     public date: Date,
-    public user: number,
+    public user: User,
     public announcement: number
   ) {}
 }
