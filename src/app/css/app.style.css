@@ -66,18 +66,18 @@ ul.f-icons li {
   display: inline;
 }
 ul.f-icons li a.facebook,.ul.f-iconsli a.p,ul.f-icons li a.twitter{
-	background: url(./assets/images/icons.png) no-repeat -4px 0px;
+	background: url(../../assets/images/icons.png) no-repeat -4px 0px;
 	height:40px;
 	width:40px;
 }
 ul.f-icons li a.gg{
-	background: url(./assets/images/icons.png) no-repeat -44px 0px;
+	background: url(../../assets/images/icons.png) no-repeat -44px 0px;
 }
 ul.f-icons li a.twitter{
-	background: url(./assets/images/icons.png) no-repeat -84px 0px;
+	background: url(../../assets/images/icons.png) no-repeat -84px 0px;
 }
 ul.f-icons  li a.p{
-	background: url(./assets/images/icons.png) no-repeat -124px 0px;
+	background: url(../../assets/images/icons.png) no-repeat -124px 0px;
 }
 .do-button a{
   padding: 0.8em 1.2em;
@@ -1096,7 +1096,7 @@ h3.tittle.two {
 }
 /*--about-section--*/
 .banner.two {
-  background: url(./assets/images/banner-two.jpg) no-repeat center top;
+  background: url(../../assets/images/banner-two.jpg) no-repeat center top;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -1163,7 +1163,7 @@ h3.tittle.two {
    position: relative;
 }
 .view a.info {
-   background:url(../img/link.png) center no-repeat;
+   background:/*url(../img/link.png)*/ center no-repeat;
    display: inline-block;
    text-decoration: none;
    padding:0;
@@ -1500,7 +1500,7 @@ color: #53d0c6;
   height: 22px;
   border: none;
   text-indent: 100%;
-  background: url(./app/images/move-top.png) no-repeat 0px 0px;
+  background: url(../../assets/images/move-top.png) no-repeat 0px 0px;
 }
 @media (max-width:1440px){
 	.banner-info {
@@ -1521,7 +1521,7 @@ color: #53d0c6;
 	  font-size: 3.1em
 	}
 	.banner.two {
-	  background: url(./assets/images/banner-two.jpg) no-repeat center top;
+	  background: url(../../assets/images/banner-two.jpg) no-repeat center top;
 	  background-size: cover;
 	  -webkit-background-size: cover;
 	  -moz-background-size: cover;
@@ -1678,7 +1678,7 @@ color: #53d0c6;
 	  padding-bottom: 2em;
 	}
 	.banner.two {
-	  background: url(./assets/images/banner-two.jpg) no-repeat center top;
+	  background: url(../../assets/images/banner-two.jpg) no-repeat center top;
 	  background-size: cover;
 	  -webkit-background-size: cover;
 	  -moz-background-size: cover;
@@ -1944,7 +1944,7 @@ color: #53d0c6;
 	  min-height: 342px;
 	}
 	.banner.two {
-	  background: url(./assets/images/banner-two.jpg) no-repeat center top;
+	  background: url(../../assets/images/banner-two.jpg) no-repeat center top;
 	  background-size: cover;
 	  -webkit-background-size: cover;
 	  -moz-background-size: cover;
@@ -2103,7 +2103,7 @@ color: #53d0c6;
 	  padding: 2em 0 4em 0;
 	}
 	.banner.two {
-	  background: url(./assets/images/banner-two.jpg) no-repeat center top;
+	  background: url(../../assets/images/banner-two.jpg) no-repeat center top;
 	  background-size: cover;
 	  -webkit-background-size: cover;
 	  -moz-background-size: cover;
@@ -2213,7 +2213,7 @@ color: #53d0c6;
 	  padding: 1.5em 0;
 	}
 	ul.f-icons li a.facebook, .ul.f-iconsli a.p, ul.f-icons li a.twitter {
-      background: url(./app/images/icons.png) no-repeat -7px -0px;
+      background: url(../../assets/images/icons.png) no-repeat -7px -0px;
     }
 	.banner-info {
 	  margin-top:6em;
@@ -2228,7 +2228,7 @@ color: #53d0c6;
       background-size: 191%
 	}
 	.banner {
-	  background: url(././app/images/banner.jpg) no-repeat center top;
+	  background: url(../../assets/images/banner.jpg) no-repeat center top;
 	  background-size: cover;
 	  -webkit-background-size: cover;
 	  -moz-background-size: cover;
