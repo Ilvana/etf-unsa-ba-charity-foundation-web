@@ -172,7 +172,7 @@
               <td>{{announcement.id}}</td>
               <td>{{announcement.title}}</td>
               <td>{{announcement.text}}</td>
-              <td>{{announcement.date}}</td>
+              <td>{{announcement.date | date}}</td>
               <td>{{announcement.telephone}}</td>
               <td>{{announcement.account}}</td>
               <td>{{announcement.picture}}</td>
@@ -323,7 +323,7 @@
             <tr *ngFor="let comment of pagedComments">
               <td>{{comment.id}}</td>
               <td>{{comment.text}}</td>
-              <td>{{comment.date}}</td>
+              <td>{{comment.date | date}}</td>
               <td>{{comment.user}}</td>
               <td>{{comment.announcement}}</td>
               <td>
