@@ -13,7 +13,7 @@ import {User} from "../models/user";
 })
 
 export class SinglePageComponent implements OnInit {
-  private model = new Comment(1, '', new Date(),  new User(26, '', '', '', 1, '', '', 1) , null);
+  private model = new Comment(1, '', new Date(),  new User(27, '', '', '', 1, '', '', 1) , null);
   comment: Comment;
   private announcement: Announcement;
   private sub: any;
