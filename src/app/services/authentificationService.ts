@@ -20,7 +20,7 @@ export class AuthenticationService {
 
   login(user, users) {
     var authenticatedUser = users.find(u => u.username === user.username);
-    if (authenticatedUser && authenticatedUser.password === user.password) {
+    if (authenticatedUser && authenticatedUser.password === user.password && authenticatedUser.role === 'ROLE_ADMIN') {
       localStorage.setItem("user", authenticatedUser);
       this._router.navigate(['/admin']);
       return true;
